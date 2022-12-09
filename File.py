@@ -1,6 +1,18 @@
+import requests
+import json
 import datetime
+
+response = requests.get('https://dekontaminasi.com/api/id/covid19/hospitals')
+ambl = response.json()
 ambulance_rate = 0
 
+def Tampilan():
+  print("Penyewaan Ambulans")
+  print("Mencari Rumah Sakit Terdekat Berdasarkan")
+  print("1. Kabupaten/Kota")
+  print('2. Province')
+  print()
+  
 def show_available_ambulances():
   # Tampilkan jenis mobil ambulans yang tersedia beserta tarif sewa per hari-nya
   print("Jenis Mobil Ambulans\t\t\tTarif Sewa/Hari")
@@ -9,14 +21,9 @@ def show_available_ambulances():
   print("2. Mobil Ambulans Gabungan\t\tRp. 1.000.000\n")
 
 def rent_ambulance():
-  while True :# Dapatkan input jenis mobil ambulans yang dipilih 
-    while True :
-        try:
-            ambulance_type = int(input("Masukkan jenis mobil ambulans (1/2): "))
-        except (SyntaxError,NameError, ValueError):
-            print("pilihan invalid masukkan pilihan hanya 1 / 2!")
-            continue
-        break       
+  # Dapatkan input jenis mobil ambulans yang dipilih 
+  try:
+    ambulance_type = int(input("Masukkan jenis mobil ambulans (1/2): "))
     if ambulance_type == 1:
         ambulance_type = "Mobil Ambulans Umum"
         ambulance_rate = 500000
@@ -28,6 +35,8 @@ def rent_ambulance():
     else:
         print("Jenis mobil ambulans tidak valid")        
     return
+  except (SyntaxError,NameError, ValueError):
+    print("pilihan invalid masukkan pilihan hanya 1 / 2!")
 
   # Dapatkan input tanggal pemesanan
     
@@ -48,10 +57,10 @@ def inputdata(self):
         # print('Nama Penyewa : ', nama_penyewa, '\n', 'Tanggal sewa : ', booking_date, 'Lama sewa:  ', duration,'Harga yang harus dibayar', bayar )
         return  nama_penyewa, booking_date, duration, bayar
     
-    tampilan(printdata(), 60)
+    Bukti(printdata(), 60)
     
 
-def tampilan(c,w):
+def Bukti(c,w):
 #w fungsinya untuk parameter jumlah karakter yang ingin ditampilkan
     print('┏' + ('━' * w)                       + '┓')
     print('┃' + ' {} '.format(c).center(w, '░') + '┃')
