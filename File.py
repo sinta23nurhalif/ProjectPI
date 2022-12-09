@@ -82,8 +82,6 @@ def rent_ambulance():
     return
   except (SyntaxError,NameError, ValueError):
     print("pilihan invalid masukkan pilihan hanya 1 / 2!")
-
-  # Dapatkan input tanggal pemesanan
     
 def inputdata(self):
     #ambulance_rate = ambulance_rate.rent_ambulance()
@@ -101,7 +99,6 @@ def inputdata(self):
         # print('=====        DATA PENYEWAAN      =====')
         # print('Nama Penyewa : ', nama_penyewa, '\n', 'Tanggal sewa : ', booking_date, 'Lama sewa:  ', duration,'Harga yang harus dibayar', bayar )
         return  nama_penyewa, booking_date, duration, bayar
-    
     Bukti(printdata(), 60)
     
 
@@ -111,6 +108,6 @@ def Bukti(c,w):
     print('┃' + ' {} '.format(c).center(w, '░') + '┃')
     print('┃' + ' {} '.format(" \npastikan data anda benar!").center(w, '░') + '┃')
     print('┡' + ('━' * w)                       + '┩')
-
-show_available_ambulances()
-rent_ambulance()
+    
+Tampilan()
+Mulai()
