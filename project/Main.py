@@ -1,0 +1,3 @@
+import Mulai
+
+Mulai.Mulai()
