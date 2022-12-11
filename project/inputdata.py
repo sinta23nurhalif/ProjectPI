@@ -15,9 +15,9 @@ def inputdata(para):
     duration = int(input("Lama sewa: "))
     nama_penyewa = input("Nama penyewa: ")
     Tampilan.bayar = para*duration
-    Tampilan.a = str(Tampilan.bayar)
+    Tampilan.total = str("{:,}".format(Tampilan.bayar).replace(',','.'))
     def printdata():
         print('\t   =====        DATA PENYEWAAN      =====')
         return  nama_penyewa, booking_date, duration, Tampilan.bayar
-    Bukti.Bukti(printdata(), 60, Tampilan.a, Tampilan.date)
+    Bukti.Bukti(printdata(), 60, Tampilan.bayar, Tampilan.date)
     
